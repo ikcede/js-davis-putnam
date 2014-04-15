@@ -6,10 +6,6 @@
 <script type="text/javascript" src="davisputnam.js"></script>
 
 <script type="text/javascript">
-var atoms = [
-	1,2,3
-];
-
 var propositions = [
 	[1,2,3],
 	[-2,3],
@@ -22,12 +18,10 @@ var propositions = [
 
 var run_test = function() {
 
-	var values = [];
-	for(var i=0;i<atoms.length;i++) {
-		values[i] = null;
-	}
+	DavisPutnam.init(3);
+	DavisPutnam.propositions = propositions;
 	
-	values = DavisPutnam.solve(atoms, propositions, values);
+	values = DavisPutnam.run();
 	
 	// Output solution
 	if(values == null) {

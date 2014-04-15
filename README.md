@@ -15,7 +15,7 @@ Then, add in propositions to the solver. Each number in a proposition
 should reference an atom, and use negative values for negation:
 
 ```js
-DavisPutnam.add_prop([1,2,-3]);
+DavisPutnam.addProp([1,2,-3]);
 
 // OR
 DavisPutnam.propositions = [[1,2,3],[2,-4]];

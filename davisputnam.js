@@ -9,14 +9,14 @@
 		this.atoms = [];
 		this.values = [];
 		for(var i=0;i<atom_count;i++) {
-			atoms.push(i+1);
-			values.push(null);
+			this.atoms.push(i+1);
+			this.values.push(null);
 		}
 		this.propositions = [];
 	};
 	
 	// Adds in a proposition to the propositions array
-	DavisPutnam.add_prop = function(clause) {
+	DavisPutnam.addProp = function(clause) {
 		this.propositions.push(clause);
 	};
 	
