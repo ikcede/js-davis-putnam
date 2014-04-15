@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<title>Test file</title>
+
+<script type="text/javascript" src="davisputnam.js"></script>
+
+<script type="text/javascript">
+var atoms = [
+	1,2,3
+];
+
+var propositions = [
+	[1,2,3],
+	[-2,3],
+	[-3]
+];
+
+// ---------------------------------------------
+// Run a sample test
+// ---------------------------------------------
+
+var run_test = function() {
+
+	var values = [];
+	for(var i=0;i<atoms.length;i++) {
+		values[i] = null;
+	}
+	
+	values = DavisPutnam.solve(atoms, propositions, values);
+	
+	// Output solution
+	if(values == null) {
+		console.log("No solution");
+		document.getElementById("output").innerHTML = "No solution";
+	} else {
+		console.log(values);
+		document.getElementById("output").innerHTML = values.toString();
+	}
+	
+};
+
+</script>
+
+
+</head>
+
+<body onload="run_test()">
+
+<div id="output">
+
+</div>
+
+</body>
+</html>
