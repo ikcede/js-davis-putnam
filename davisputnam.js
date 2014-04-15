@@ -4,6 +4,28 @@
 
 (function(DavisPutnam) {
 	
+	// Init Davis Putnam with total number of atoms
+	DavisPutnam.init = function(atom_count) {
+		this.atoms = [];
+		this.values = [];
+		for(var i=0;i<atom_count;i++) {
+			atoms.push(i+1);
+			values.push(null);
+		}
+		this.propositions = [];
+	};
+	
+	// Adds in a proposition to the propositions array
+	DavisPutnam.add_prop = function(clause) {
+		this.propositions.push(clause);
+	};
+	
+	// Running function
+	DavisPutnam.run = function() {
+		return this.solve(this.atoms,this.propositions,this.values);
+	};
+	
+	// Solves the propositions to see if a set of values satisfies all the clauses
 	DavisPutnam.solve = function(atoms, s, v) {
 		// Copy value array for new iteration
 		v = v.slice();
